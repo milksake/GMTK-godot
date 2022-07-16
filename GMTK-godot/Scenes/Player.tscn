@@ -7,9 +7,10 @@
 extents = Vector2( 30, 30 )
 
 [node name="Player" type="KinematicBody2D"]
+collision_layer = 3
 script = ExtResource( 2 )
-gravity = 5000.0
-speed = Vector2( 500, 1500 )
+gravity = 2400.0
+speed = Vector2( 350, 900 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
