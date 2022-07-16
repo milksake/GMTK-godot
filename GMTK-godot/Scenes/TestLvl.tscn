@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/DebugPanel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/TestLvl.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 482.75, 10 )
+
+[node name="TestLvl" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 335, 335 )
+
+[node name="Area2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 521.25, 503 )
+shape = SubResource( 1 )
+
+[node name="Control" parent="." instance=ExtResource( 2 )]
+
+[connection signal="gravity_changed" from="Control" to="." method="_on_Control_gravity_changed"]
+[connection signal="speedX_changed" from="Control" to="." method="_on_Control_speedX_changed"]
+[connection signal="speedY_changed" from="Control" to="." method="_on_Control_speedY_changed"]
