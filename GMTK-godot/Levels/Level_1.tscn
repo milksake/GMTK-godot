@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Textures/marble.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/ClearFlag.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/RandomBlock.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/DiceBlock.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/RandomBlockArea.tscn" type="PackedScene" id=6]
 
 [node name="Level_1" type="Node2D"]
 
@@ -17,6 +18,11 @@ tile_data = PoolIntArray( -2, 1, 0, -1, 1, 0, -65536, 1, 0, -65535, 1, 0, -65534
 
 [node name="ClearFlag" parent="." instance=ExtResource( 2 )]
 position = Vector2( 936, 120 )
+
+[node name="RandomBlockArea" parent="." instance=ExtResource( 6 )]
+origin = Vector2( 500, 100 )
+matrix_x = Vector2( 500, -25 )
+matrix_y = Vector2( 0, 400 )
 
 [node name="RandomBlocks" type="Node2D" parent="."]
 
@@ -32,20 +38,8 @@ size = Vector2( 5, 2 )
 position = Vector2( 720, 520 )
 size = Vector2( 5, 2 )
 
-[node name="RandomBlock4" parent="RandomBlocks" instance=ExtResource( 3 )]
-position = Vector2( 720, 480 )
-size = Vector2( 5, 2 )
-
-[node name="RandomBlock5" parent="RandomBlocks" instance=ExtResource( 3 )]
-position = Vector2( 912, 520 )
-size = Vector2( 5, 2 )
-
-[node name="RandomBlock6" parent="RandomBlocks" instance=ExtResource( 3 )]
-position = Vector2( 912, 480 )
-size = Vector2( 5, 2 )
-
 [node name="DiceBlock" parent="RandomBlocks" instance=ExtResource( 5 )]
-position = Vector2( 640, 384 )
+position = Vector2( 656, 392 )
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 128, 448 )
