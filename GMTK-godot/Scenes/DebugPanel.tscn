@@ -1,0 +1,89 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/DebugPanel.gd" type="Script" id=1]
+
+[node name="Control" type="VBoxContainer"]
+margin_right = 300.0
+margin_bottom = 100.0
+script = ExtResource( 1 )
+
+[node name="Gravity" type="HBoxContainer" parent="."]
+margin_right = 300.0
+margin_bottom = 16.0
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Gravity"]
+margin_top = 1.0
+margin_right = 49.0
+margin_bottom = 15.0
+text = "Gravity "
+
+[node name="Slider" type="HSlider" parent="Gravity"]
+margin_left = 53.0
+margin_right = 300.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 10000.0
+step = 100.0
+
+[node name="GLabel" type="Label" parent="."]
+margin_top = 20.0
+margin_right = 300.0
+margin_bottom = 34.0
+
+[node name="SpeedX" type="HBoxContainer" parent="."]
+margin_top = 38.0
+margin_right = 300.0
+margin_bottom = 54.0
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="SpeedX"]
+margin_top = 1.0
+margin_right = 50.0
+margin_bottom = 15.0
+text = "Speed.x"
+
+[node name="Slider" type="HSlider" parent="SpeedX"]
+margin_left = 54.0
+margin_right = 300.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 1000.0
+step = 10.0
+
+[node name="SXLabel" type="Label" parent="."]
+margin_top = 58.0
+margin_right = 300.0
+margin_bottom = 72.0
+
+[node name="SpeedY" type="HBoxContainer" parent="."]
+margin_top = 76.0
+margin_right = 300.0
+margin_bottom = 92.0
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="SpeedY"]
+margin_top = 1.0
+margin_right = 50.0
+margin_bottom = 15.0
+text = "Speed.y"
+
+[node name="Slider" type="HSlider" parent="SpeedY"]
+margin_left = 54.0
+margin_right = 300.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 10000.0
+step = 100.0
+
+[node name="SYLabel" type="Label" parent="."]
+margin_top = 96.0
+margin_right = 300.0
+margin_bottom = 110.0
+
+[connection signal="value_changed" from="Gravity/Slider" to="." method="_on_GSlider_value_changed"]
+[connection signal="value_changed" from="SpeedX/Slider" to="." method="_on_SXSlider_value_changed"]
+[connection signal="value_changed" from="SpeedY/Slider" to="." method="_on_SYSlider_value_changed"]
