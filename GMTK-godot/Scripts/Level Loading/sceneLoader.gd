@@ -4,8 +4,6 @@ var current_level = 0
 var load_level_function
 var load_next_level_function
 
-var busy_loading = false
-
 func _ready():
 	load_level_function = funcref(self, "load_level")
 	load_next_level_function = funcref(self, "load_next_level")
@@ -18,7 +16,7 @@ func load_level(level_number):
 		
 	var level_name = "Level_" + str(level_number) + ".tscn"
 	var level_n = load("res://Levels/" + level_name).instance()
-	add_child(level_n)
+	call_deferred("add_child", level_n)
 
 
 func load_next_level():
