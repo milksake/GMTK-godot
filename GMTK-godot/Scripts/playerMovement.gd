@@ -5,10 +5,13 @@ var velocity: = Vector2.ZERO
 export var gravity: = 1000.0
 export var speed: = Vector2(300.0, 1000.0)
 
+var player_anim
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	velocity = Vector2.ZERO
-
+	player_anim = get_node("AnimatedSprite")
+	player_anim.playing = true
 
 func _physics_process(delta):
 	var direction = get_player_direction()
@@ -20,6 +23,13 @@ func _physics_process(delta):
 	if Input.is_action_just_released("jump") and velocity.y < 0: # when jump stops
 		new_velocity.y = 0
 	velocity = move_and_slide(new_velocity, Vector2.UP)
+	
+	# For player animation:
+	
+	if velocity.x != 0:
+		player_anim.animation = "run"
+	else:
+		player_anim.animation = "idle"
 
 
 func get_player_direction():
