@@ -34,7 +34,7 @@ position = Vector2( 152, 160 )
 [node name="RandomBlockArea" parent="BlueBlocks" instance=ExtResource( 6 )]
 position = Vector2( -80, 8 )
 origin = Vector2( 650, 150 )
-matrix_x = Vector2( 300, 0 )
+matrix_x = Vector2( 250, 0 )
 matrix_y = Vector2( 100, 350 )
 
 [node name="RandomBlock" parent="BlueBlocks" instance=ExtResource( 3 )]
