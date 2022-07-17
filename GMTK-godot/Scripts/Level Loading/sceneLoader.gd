@@ -3,8 +3,10 @@ extends Node
 var current_level = 0 
 var load_level_function
 var load_next_level_function
-export var screen_shake := 0
+var screen_shake := 0
 onready var camera: Camera2D
+var path_to_dice_block: NodePath
+var dice_connect := false
 
 func _ready():
 	camera = Camera2D.new()
@@ -15,7 +17,11 @@ func _ready():
 	load_next_level_function = funcref(self, "load_next_level")
 	load_level_function.call_func(current_level)
 
-func _process(delta):
+func _process(_delta):
+	if dice_connect:
+		var thisNode = self
+		get_node(path_to_dice_block).call_deferred("connect", "dice_block_touched", thisNode, "shake_screen")
+		dice_connect = false
 	camera.set_offset(Vector2(rand_range(-screen_shake, screen_shake), rand_range(-screen_shake, screen_shake)))
 
 func load_level(level_number):
@@ -23,9 +29,11 @@ func load_level(level_number):
 		get_child(1).queue_free()
 		
 	var level_name = "Level_" + str(level_number) + ".tscn"
-	var level_n = load("res://Levels/" + level_name).instance()
+	var level_n: Node = load("res://Levels/" + level_name).instance()
 	call_deferred("add_child", level_n)
-
+	if level_n.has_node(NodePath("RandomBlockRandomizer/DiceBlock")):
+		path_to_dice_block = NodePath("Level_" + str(level_number) + "/RandomBlockRandomizer/DiceBlock")
+		dice_connect = true
 
 func load_next_level():
 	var path_to_next_level_file = "res://Levels/Level_" + str(current_level+1) + ".tscn" 
@@ -38,3 +46,8 @@ func does_file_exist(path_to_file) -> bool:
 	var directory = Directory.new()
 	var doesFileExist = directory.file_exists(path_to_file)
 	return doesFileExist
+
+func shake_screen():
+	screen_shake = 12
+	yield(get_tree().create_timer(0.1), "timeout")
+	screen_shake = 0
