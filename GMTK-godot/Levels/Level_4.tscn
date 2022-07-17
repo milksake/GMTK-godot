@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Textures/marble.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/ClearFlag.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Scenes/DiceBlock.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/RandomBlockArea.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scripts/Random Block Mechanic/RandomBlockRandomizer.gd" type="Script" id=7]
+[ext_resource path="res://Scenes/LevelStartCurtain.tscn" type="PackedScene" id=8]
 
 [node name="Level_2" type="Node2D"]
 
@@ -103,3 +104,5 @@ block_color = Color( 0.941176, 0.92549, 0.129412, 1 )
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 128, 448 )
+
+[node name="LevelCurtain" parent="." instance=ExtResource( 8 )]

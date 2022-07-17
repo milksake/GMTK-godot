@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Textures/marble.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/ClearFlag.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Scripts/Random Block Mechanic/RandomBlockRandomizer.gd" type="Script" id=7]
 [ext_resource path="res://Scenes/DeathPit.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Spike.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/LevelStartCurtain.tscn" type="PackedScene" id=10]
 
 [node name="Level_2" type="Node2D"]
 
@@ -90,3 +91,5 @@ position = Vector2( 776, 592 )
 [node name="DeathPit" parent="SpikeBed" instance=ExtResource( 8 )]
 position = Vector2( 656, 600 )
 scale = Vector2( 25, 1 )
+
+[node name="LevelCurtain" parent="." instance=ExtResource( 10 )]

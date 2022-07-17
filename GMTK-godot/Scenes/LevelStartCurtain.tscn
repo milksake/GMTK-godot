@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/LevelStartCurtain.gd" type="Script" id=1]
+
+[node name="LevelCurtain" type="Panel"]
+margin_left = -88.0
+margin_top = -40.0
+margin_right = 1088.0
+margin_bottom = 640.0
+script = ExtResource( 1 )
+entrance_duration = 1.5
+
+[node name="Tween" type="Tween" parent="."]

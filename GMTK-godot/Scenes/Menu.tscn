@@ -39,7 +39,7 @@ margin_bottom = 500.0
 margin_right = 824.0
 margin_bottom = 120.0
 custom_fonts/font = SubResource( 1 )
-text = "Platform Game"
+text = "Reset, Re(set)"
 align = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
