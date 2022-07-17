@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Textures/marble.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/ClearFlag.tscn" type="PackedScene" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Scenes/RandomBlockRandomizer.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/LevelStartCurtain.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Background.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/DeathPit.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Spike.tscn" type="PackedScene" id=11]
 
 [node name="Level_6" type="Node2D"]
 
@@ -99,3 +101,57 @@ position = Vector2( 144, 72 )
 size = Vector2( 10, 2 )
 clearance_radius = 100
 block_color = Color( 0.0941176, 0.917647, 0.513726, 1 )
+
+[node name="SpikeBed" type="Node2D" parent="."]
+position = Vector2( 200, 584 )
+
+[node name="Spike" parent="SpikeBed" instance=ExtResource( 11 )]
+
+[node name="Spike2" parent="SpikeBed" instance=ExtResource( 11 )]
+position = Vector2( 40, 0 )
+
+[node name="Spike3" parent="SpikeBed" instance=ExtResource( 11 )]
+position = Vector2( 80, 0 )
+
+[node name="Spike4" parent="SpikeBed" instance=ExtResource( 11 )]
+position = Vector2( 122, 2 )
+
+[node name="Spike5" parent="SpikeBed" instance=ExtResource( 11 )]
+position = Vector2( 162, 2 )
+
+[node name="Spike6" parent="SpikeBed" instance=ExtResource( 11 )]
+position = Vector2( 202, 2 )
+
+[node name="Spike7" parent="SpikeBed" instance=ExtResource( 11 )]
+position = Vector2( 242, 2 )
+
+[node name="Spike8" parent="SpikeBed" instance=ExtResource( 11 )]
+position = Vector2( 282, 2 )
+
+[node name="Spike9" parent="SpikeBed" instance=ExtResource( 11 )]
+position = Vector2( 322, 2 )
+
+[node name="Spike10" parent="SpikeBed" instance=ExtResource( 11 )]
+position = Vector2( 362, 2 )
+
+[node name="Spike11" parent="SpikeBed" instance=ExtResource( 11 )]
+position = Vector2( 402, 2 )
+
+[node name="Spike12" parent="SpikeBed" instance=ExtResource( 11 )]
+position = Vector2( 442, 2 )
+
+[node name="Spike13" parent="SpikeBed" instance=ExtResource( 11 )]
+position = Vector2( 482, 2 )
+
+[node name="Spike14" parent="SpikeBed" instance=ExtResource( 11 )]
+position = Vector2( 522, 2 )
+
+[node name="Spike15" parent="SpikeBed" instance=ExtResource( 11 )]
+position = Vector2( 562, 2 )
+
+[node name="Spike16" parent="SpikeBed" instance=ExtResource( 11 )]
+position = Vector2( 600, 0 )
+
+[node name="DeathPit" parent="SpikeBed" instance=ExtResource( 10 )]
+position = Vector2( 296, 16 )
+scale = Vector2( 32.396, -1.36194 )
