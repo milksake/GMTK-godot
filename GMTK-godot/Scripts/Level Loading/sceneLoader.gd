@@ -6,8 +6,6 @@ var load_next_level_function
 export var screen_shake := 0
 onready var camera: Camera2D
 
-var busy_loading = false
-
 func _ready():
 	camera = Camera2D.new()
 	camera.current = true
@@ -26,7 +24,7 @@ func load_level(level_number):
 		
 	var level_name = "Level_" + str(level_number) + ".tscn"
 	var level_n = load("res://Levels/" + level_name).instance()
-	add_child(level_n)
+	call_deferred("add_child", level_n)
 
 
 func load_next_level():

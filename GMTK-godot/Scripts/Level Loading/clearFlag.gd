@@ -1,7 +1,7 @@
 extends Area2D
 
 
-func _on_ClearFlag_body_entered(body):
+func _on_ClearFlag_body_entered(_body):
 	print("ClearFlag touched!")
 	
 	var scene_loader = get_node("/root/Main")
