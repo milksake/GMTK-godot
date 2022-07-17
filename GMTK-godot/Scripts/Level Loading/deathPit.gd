@@ -1,10 +1,5 @@
 extends Area2D
 
-func _ready():
-	randomize()
-	print(randi()%20) # This is to prove that the scene has reloaded.
-
-
 func _on_DeathPit_body_entered(body):
 	# This implies that the level node must be a child of
 	# a Node with sceneManager.gd
