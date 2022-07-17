@@ -30,27 +30,25 @@ script = ExtResource( 7 )
 [node name="RandomBlock" parent="RandomBlockRandomizer" instance=ExtResource( 3 )]
 position = Vector2( 816, 504 )
 size = Vector2( 5, 2 )
-clearance_radius = 40
+clearance_radius = 60
 
 [node name="RandomBlock2" parent="RandomBlockRandomizer" instance=ExtResource( 3 )]
 position = Vector2( 816, 440 )
 size = Vector2( 5, 2 )
-clearance_radius = 40
+clearance_radius = 60
 
 [node name="RandomBlock3" parent="RandomBlockRandomizer" instance=ExtResource( 3 )]
 position = Vector2( 824, 392 )
 size = Vector2( 5, 2 )
-clearance_radius = 40
+clearance_radius = 60
 
 [node name="RandomBlock4" parent="RandomBlockRandomizer" instance=ExtResource( 3 )]
 position = Vector2( 912, 504 )
 size = Vector2( 5, 2 )
-clearance_radius = 40
+clearance_radius = 60
 
 [node name="DiceBlock" parent="RandomBlockRandomizer" instance=ExtResource( 5 )]
 position = Vector2( 256, 424 )
-collision_layer = 1
-collision_mask = 3
 dice_color = Color( 0.54902, 0.0980392, 0.862745, 1 )
 
 [node name="RandomBlockArea" parent="RandomBlockRandomizer" instance=ExtResource( 6 )]
@@ -93,3 +91,4 @@ position = Vector2( 656, 600 )
 scale = Vector2( 25, 1 )
 
 [node name="LevelCurtain" parent="." instance=ExtResource( 10 )]
+visible = false

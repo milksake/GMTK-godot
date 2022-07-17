@@ -5,6 +5,7 @@ export var entrance_duration = 0.2
 var tween
 
 func _ready():
+	visible = true
 	tween = get_node("Tween")
 	var final_pos = rect_position + 1000 * Vector2.UP
 	

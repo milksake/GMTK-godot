@@ -7,6 +7,8 @@ export var speed: = Vector2(300.0, 1000.0)
 
 var player_anim
 
+onready var jump_sound = get_node("JumpSound")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	velocity = Vector2.ZERO
@@ -30,7 +32,7 @@ func _physics_process(delta):
 		player_anim.animation = "run"
 	else:
 		player_anim.animation = "idle"
-
+		
 
 func get_player_direction():
 	var player_direction = Vector2.ZERO

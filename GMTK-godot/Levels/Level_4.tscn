@@ -27,8 +27,6 @@ script = ExtResource( 7 )
 
 [node name="DiceBlock" parent="BlueBlocks" instance=ExtResource( 5 )]
 position = Vector2( 152, 160 )
-collision_layer = 1
-collision_mask = 3
 
 [node name="RandomBlockArea" parent="BlueBlocks" instance=ExtResource( 6 )]
 position = Vector2( -80, 8 )
@@ -38,43 +36,33 @@ matrix_y = Vector2( 100, 350 )
 
 [node name="RandomBlock" parent="BlueBlocks" instance=ExtResource( 3 )]
 position = Vector2( 80, 72 )
-clearance_radius = 40
 
 [node name="RandomBlock2" parent="BlueBlocks" instance=ExtResource( 3 )]
 position = Vector2( 136, 72 )
-clearance_radius = 40
 
 [node name="RandomBlock3" parent="BlueBlocks" instance=ExtResource( 3 )]
 position = Vector2( 184, 72 )
-clearance_radius = 40
 
 [node name="RandomBlock4" parent="BlueBlocks" instance=ExtResource( 3 )]
 position = Vector2( 232, 72 )
-clearance_radius = 40
 
 [node name="RandomBlock5" parent="BlueBlocks" instance=ExtResource( 3 )]
 position = Vector2( 280, 72 )
-clearance_radius = 40
 
 [node name="RandomBlock6" parent="BlueBlocks" instance=ExtResource( 3 )]
 position = Vector2( 328, 72 )
-clearance_radius = 40
 
 [node name="RandomBlock7" parent="BlueBlocks" instance=ExtResource( 3 )]
 position = Vector2( 328, 112 )
-clearance_radius = 40
 
 [node name="RandomBlock8" parent="BlueBlocks" instance=ExtResource( 3 )]
 position = Vector2( 288, 112 )
-clearance_radius = 40
 
 [node name="YellowBlocks" type="Node2D" parent="."]
 script = ExtResource( 7 )
 
 [node name="DiceBlock" parent="YellowBlocks" instance=ExtResource( 5 )]
 position = Vector2( 856, 288 )
-collision_layer = 1
-collision_mask = 3
 dice_color = Color( 0.941176, 0.909804, 0.129412, 1 )
 
 [node name="RandomBlockArea" parent="YellowBlocks" instance=ExtResource( 6 )]
@@ -106,3 +94,4 @@ block_color = Color( 0.941176, 0.92549, 0.129412, 1 )
 position = Vector2( 128, 448 )
 
 [node name="LevelCurtain" parent="." instance=ExtResource( 8 )]
+visible = false
