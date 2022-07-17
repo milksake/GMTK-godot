@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Textures/marble.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/ClearFlag.tscn" type="PackedScene" id=2]
@@ -8,8 +8,11 @@
 [ext_resource path="res://Scenes/RandomBlockArea.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scripts/Random Block Mechanic/RandomBlockRandomizer.gd" type="Script" id=7]
 [ext_resource path="res://Scenes/LevelStartCurtain.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Background.tscn" type="PackedScene" id=9]
 
-[node name="Level_2" type="Node2D"]
+[node name="Level_4" type="Node2D"]
+
+[node name="Background" parent="." instance=ExtResource( 9 )]
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2( 2, 2 )

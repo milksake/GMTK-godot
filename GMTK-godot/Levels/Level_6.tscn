@@ -1,0 +1,101 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Textures/marble.tres" type="TileSet" id=1]
+[ext_resource path="res://Scenes/ClearFlag.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/RandomBlock.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/DiceBlock.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/RandomBlockArea.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/RandomBlockRandomizer.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/LevelStartCurtain.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Background.tscn" type="PackedScene" id=9]
+
+[node name="Level_6" type="Node2D"]
+
+[node name="Background" parent="." instance=ExtResource( 9 )]
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2( 2, 2 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 18, 18 )
+collision_layer = 5
+format = 1
+tile_data = PoolIntArray( -2, 1, 0, -1, 1, 0, -65536, 1, 0, -65535, 1, 0, -65534, 1, 0, -65533, 1, 0, -65532, 1, 0, -65531, 1, 0, -65530, 1, 0, -65529, 1, 0, -65528, 1, 0, -65527, 1, 0, -65526, 1, 0, -65525, 1, 0, -65524, 1, 0, -65523, 1, 0, -65522, 1, 0, -65521, 1, 0, -65520, 1, 0, -65519, 1, 0, -65518, 1, 0, -65517, 1, 0, -65516, 1, 0, -65515, 1, 0, -65514, 1, 0, -65513, 1, 0, -65512, 1, 0, -65511, 1, 0, -65510, 1, 0, -65509, 1, 0, -65508, 1, 0, -65507, 1, 0, 65534, 1, 0, 65535, 1, 0, 0, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 9, 1, 0, 10, 1, 0, 11, 1, 0, 12, 1, 0, 13, 1, 0, 14, 1, 0, 15, 1, 0, 16, 1, 0, 17, 1, 0, 18, 1, 0, 19, 1, 0, 20, 1, 0, 21, 1, 0, 22, 1, 0, 23, 1, 0, 24, 1, 0, 25, 1, 0, 26, 1, 0, 27, 1, 0, 28, 1, 0, 29, 1, 0, 131070, 1, 0, 131071, 1, 0, 65536, 1, 0, 65563, 1, 0, 65564, 1, 0, 65565, 1, 0, 196606, 1, 0, 196607, 1, 0, 131072, 1, 0, 131099, 1, 0, 131100, 1, 0, 131101, 1, 0, 262142, 1, 0, 262143, 1, 0, 196608, 1, 0, 196630, 1, 0, 196631, 1, 0, 196632, 1, 0, 196633, 1, 0, 196634, 1, 0, 196635, 1, 0, 196636, 1, 0, 196637, 1, 0, 327678, 1, 0, 327679, 1, 0, 262144, 1, 0, 262166, 1, 0, 262167, 1, 0, 262168, 1, 0, 262169, 1, 0, 262170, 1, 0, 262171, 1, 0, 262172, 1, 0, 262173, 1, 0, 393214, 1, 0, 393215, 1, 0, 327680, 1, 0, 327702, 1, 0, 327703, 1, 0, 327704, 1, 0, 327705, 1, 0, 327706, 1, 0, 327707, 1, 0, 327708, 1, 0, 327709, 1, 0, 458750, 1, 0, 458751, 1, 0, 393216, 1, 0, 393238, 1, 0, 393239, 1, 0, 393240, 1, 0, 393241, 1, 0, 393242, 1, 0, 393243, 1, 0, 393244, 1, 0, 393245, 1, 0, 524286, 1, 0, 524287, 1, 0, 458752, 1, 0, 458774, 1, 0, 458775, 1, 0, 458776, 1, 0, 458777, 1, 0, 458778, 1, 0, 458779, 1, 0, 458780, 1, 0, 458781, 1, 0, 589822, 1, 0, 589823, 1, 0, 524288, 1, 0, 524315, 1, 0, 524316, 1, 0, 524317, 1, 0, 655358, 1, 0, 655359, 1, 0, 589824, 1, 0, 589851, 1, 0, 589852, 1, 0, 589853, 1, 0, 720894, 1, 0, 720895, 1, 0, 655360, 1, 0, 655387, 1, 0, 655388, 1, 0, 655389, 1, 0, 786430, 1, 0, 786431, 1, 0, 720896, 1, 0, 720923, 1, 0, 720924, 1, 0, 720925, 1, 0, 851966, 1, 0, 851967, 1, 0, 786432, 1, 0, 786459, 1, 0, 786460, 1, 0, 786461, 1, 0, 917502, 1, 0, 917503, 1, 0, 851968, 1, 0, 851995, 1, 0, 851996, 1, 0, 851997, 1, 0, 983038, 1, 0, 983039, 1, 0, 917504, 1, 0, 917531, 1, 0, 917532, 1, 0, 917533, 1, 0, 1048574, 1, 0, 1048575, 1, 0, 983040, 1, 0, 983041, 1, 0, 983042, 1, 0, 983043, 1, 0, 983044, 1, 0, 983063, 1, 0, 983064, 1, 0, 983065, 1, 0, 983066, 1, 0, 983067, 1, 0, 983068, 1, 0, 983069, 1, 0, 1114110, 1, 0, 1114111, 1, 0, 1048576, 1, 0, 1048577, 1, 0, 1048578, 1, 0, 1048579, 1, 0, 1048580, 1, 0, 1048599, 1, 0, 1048600, 1, 0, 1048601, 1, 0, 1048602, 1, 0, 1048603, 1, 0, 1048604, 1, 0, 1048605, 1, 0 )
+
+[node name="ClearFlag" parent="." instance=ExtResource( 2 )]
+position = Vector2( 944, 512 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 928, 56 )
+
+[node name="LevelCurtain" parent="." instance=ExtResource( 8 )]
+visible = false
+
+[node name="PurpleBlocks" parent="." instance=ExtResource( 7 )]
+
+[node name="DiceBlock" parent="PurpleBlocks" instance=ExtResource( 5 )]
+position = Vector2( 80, 504 )
+
+[node name="RandomBlockArea" parent="PurpleBlocks" instance=ExtResource( 6 )]
+origin = Vector2( 200, 500 )
+matrix_x = Vector2( 500, -50 )
+matrix_y = Vector2( 0, 50 )
+
+[node name="RandomBlock" parent="PurpleBlocks" instance=ExtResource( 3 )]
+position = Vector2( 944, 400 )
+size = Vector2( 3, 3 )
+clearance_radius = 55
+
+[node name="RandomBlock2" parent="PurpleBlocks" instance=ExtResource( 3 )]
+position = Vector2( 880, 400 )
+size = Vector2( 3, 3 )
+clearance_radius = 55
+
+[node name="RandomBlock3" parent="PurpleBlocks" instance=ExtResource( 3 )]
+position = Vector2( 816, 400 )
+size = Vector2( 3, 3 )
+clearance_radius = 55
+
+[node name="RandomBlock4" parent="PurpleBlocks" instance=ExtResource( 3 )]
+position = Vector2( 816, 456 )
+size = Vector2( 3, 3 )
+clearance_radius = 55
+
+[node name="RandomBlock5" parent="PurpleBlocks" instance=ExtResource( 3 )]
+position = Vector2( 816, 512 )
+size = Vector2( 3, 3 )
+clearance_radius = 55
+
+[node name="RandomBlock6" parent="PurpleBlocks" instance=ExtResource( 3 )]
+position = Vector2( 752, 512 )
+size = Vector2( 3, 3 )
+clearance_radius = 55
+
+[node name="GreenBlocks" parent="." instance=ExtResource( 7 )]
+
+[node name="DiceBlock" parent="GreenBlocks" instance=ExtResource( 5 )]
+position = Vector2( 640, 136 )
+dice_color = Color( 0.129412, 0.941176, 0.180392, 1 )
+
+[node name="RandomBlockArea" parent="GreenBlocks" instance=ExtResource( 6 )]
+origin = Vector2( 150, 200 )
+matrix_x = Vector2( 600, 0 )
+matrix_y = Vector2( -50, 100 )
+
+[node name="RandomBlock" parent="GreenBlocks" instance=ExtResource( 3 )]
+position = Vector2( 880, 312 )
+size = Vector2( 10, 2 )
+clearance_radius = 100
+block_color = Color( 0.0941176, 0.917647, 0.513726, 1 )
+
+[node name="RandomBlock2" parent="GreenBlocks" instance=ExtResource( 3 )]
+position = Vector2( 328, 64 )
+size = Vector2( 10, 2 )
+clearance_radius = 100
+block_color = Color( 0.0941176, 0.917647, 0.513726, 1 )
+
+[node name="RandomBlock3" parent="GreenBlocks" instance=ExtResource( 3 )]
+position = Vector2( 144, 72 )
+size = Vector2( 10, 2 )
+clearance_radius = 100
+block_color = Color( 0.0941176, 0.917647, 0.513726, 1 )
