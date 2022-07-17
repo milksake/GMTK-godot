@@ -4,7 +4,7 @@
 [ext_resource path="res://Scripts/playerMovement.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 31.5, 16 )
+extents = Vector2( 20, 16 )
 
 [node name="Player" type="KinematicBody2D"]
 collision_layer = 3
@@ -18,5 +18,5 @@ frames = ExtResource( 1 )
 animation = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.5, 13 )
+position = Vector2( 0, 13 )
 shape = SubResource( 1 )

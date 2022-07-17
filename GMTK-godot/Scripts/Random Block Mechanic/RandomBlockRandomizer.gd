@@ -43,13 +43,13 @@ func randomize_blocks():
 	randomize_dice_pos()
 
 func randomize_block(previous_blocks, new_block):
+	randomize()
 	var new_pos = matrix_transformation.call_func(randf(), randf())
 	var right_to_set_pos = true
-	var own_clearance = new_block.get("clearance_radius")
 	
 	for n in range(previous_blocks.size()):
 		var distance_from_block = new_pos.distance_to(previous_blocks[n].global_position)
-		var clearance_radius_of_block = previous_blocks[n].get("clearance_radius") + own_clearance
+		var clearance_radius_of_block = previous_blocks[n].get("clearance_radius")
 
 		if distance_from_block < clearance_radius_of_block:
 			right_to_set_pos = false

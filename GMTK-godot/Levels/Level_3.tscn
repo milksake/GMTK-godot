@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Textures/marble.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/ClearFlag.tscn" type="PackedScene" id=2]
@@ -7,8 +7,10 @@
 [ext_resource path="res://Scenes/DiceBlock.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/RandomBlockArea.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scripts/Random Block Mechanic/RandomBlockRandomizer.gd" type="Script" id=7]
+[ext_resource path="res://Scenes/DeathPit.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Spike.tscn" type="PackedScene" id=9]
 
-[node name="Level_1" type="Node2D"]
+[node name="Level_2" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2( 2, 2 )
@@ -16,35 +18,93 @@ tile_set = ExtResource( 1 )
 cell_size = Vector2( 18, 18 )
 collision_layer = 5
 format = 1
-tile_data = PoolIntArray( -2, 1, 0, -1, 1, 0, -65536, 1, 0, -65535, 1, 0, -65534, 1, 0, -65533, 1, 0, -65532, 1, 0, -65531, 1, 0, -65530, 1, 0, -65529, 1, 0, -65528, 1, 0, -65527, 1, 0, -65526, 1, 0, -65525, 1, 0, -65524, 1, 0, -65523, 1, 0, -65522, 1, 0, -65521, 1, 0, -65520, 1, 0, -65519, 1, 0, -65518, 1, 0, -65517, 1, 0, -65516, 1, 0, -65515, 1, 0, -65514, 1, 0, -65513, 1, 0, -65512, 1, 0, -65511, 1, 0, -65510, 1, 0, -65509, 1, 0, -65508, 1, 0, -65507, 1, 0, 65534, 1, 0, 65535, 1, 0, 0, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 9, 1, 0, 10, 1, 0, 11, 1, 0, 12, 1, 0, 13, 1, 0, 14, 1, 0, 15, 1, 0, 16, 1, 0, 17, 1, 0, 18, 1, 0, 19, 1, 0, 20, 1, 0, 21, 1, 0, 22, 1, 0, 23, 1, 0, 24, 1, 0, 25, 1, 0, 26, 1, 0, 27, 1, 0, 28, 1, 0, 29, 1, 0, 131070, 1, 0, 131071, 1, 0, 65536, 1, 0, 65563, 1, 0, 65564, 1, 0, 65565, 1, 0, 196606, 1, 0, 196607, 1, 0, 131072, 1, 0, 131099, 1, 0, 131100, 1, 0, 131101, 1, 0, 262142, 1, 0, 262143, 1, 0, 196608, 1, 0, 196635, 1, 0, 196636, 1, 0, 196637, 1, 0, 327678, 1, 0, 327679, 1, 0, 262144, 1, 0, 262169, 1, 0, 262170, 1, 0, 262171, 1, 0, 262172, 1, 0, 262173, 1, 0, 393214, 1, 0, 393215, 1, 0, 327680, 1, 0, 327705, 1, 0, 327706, 1, 0, 327707, 1, 0, 327708, 1, 0, 327709, 1, 0, 458750, 1, 0, 458751, 1, 0, 393216, 1, 0, 393243, 1, 0, 393244, 1, 0, 393245, 1, 0, 524286, 1, 0, 524287, 1, 0, 458752, 1, 0, 458779, 1, 0, 458780, 1, 0, 458781, 1, 0, 589822, 1, 0, 589823, 1, 0, 524288, 1, 0, 524315, 1, 0, 524316, 1, 0, 524317, 1, 0, 655358, 1, 0, 655359, 1, 0, 589824, 1, 0, 589851, 1, 0, 589852, 1, 0, 589853, 1, 0, 720894, 1, 0, 720895, 1, 0, 655360, 1, 0, 655387, 1, 0, 655388, 1, 0, 655389, 1, 0, 786430, 1, 0, 786431, 1, 0, 720896, 1, 0, 720923, 1, 0, 720924, 1, 0, 720925, 1, 0, 851966, 1, 0, 851967, 1, 0, 786432, 1, 0, 786459, 1, 0, 786460, 1, 0, 786461, 1, 0, 917502, 1, 0, 917503, 1, 0, 851968, 1, 0, 851995, 1, 0, 851996, 1, 0, 851997, 1, 0, 983038, 1, 0, 983039, 1, 0, 917504, 1, 0, 917531, 1, 0, 917532, 1, 0, 917533, 1, 0, 1048574, 1, 0, 1048575, 1, 0, 983040, 1, 0, 983041, 1, 0, 983042, 1, 0, 983043, 1, 0, 983044, 1, 0, 983045, 1, 0, 983046, 1, 0, 983047, 1, 0, 983048, 1, 0, 983049, 1, 0, 983050, 1, 0, 983051, 1, 0, 983052, 1, 0, 983053, 1, 0, 983054, 1, 0, 983055, 1, 0, 983056, 1, 0, 983057, 1, 0, 983058, 1, 0, 983059, 1, 0, 983060, 1, 0, 983061, 1, 0, 983062, 1, 0, 983063, 1, 0, 983064, 1, 0, 983065, 1, 0, 983066, 1, 0, 983067, 1, 0, 983068, 1, 0, 983069, 1, 0, 1114110, 1, 0, 1114111, 1, 0, 1048576, 1, 0, 1048577, 1, 0, 1048578, 1, 0, 1048579, 1, 0, 1048580, 1, 0, 1048581, 1, 0, 1048582, 1, 0, 1048583, 1, 0, 1048584, 1, 0, 1048585, 1, 0, 1048586, 1, 0, 1048587, 1, 0, 1048588, 1, 0, 1048589, 1, 0, 1048590, 1, 0, 1048591, 1, 0, 1048592, 1, 0, 1048593, 1, 0, 1048594, 1, 0, 1048595, 1, 0, 1048596, 1, 0, 1048597, 1, 0, 1048598, 1, 0, 1048599, 1, 0, 1048600, 1, 0, 1048601, 1, 0, 1048602, 1, 0, 1048603, 1, 0, 1048604, 1, 0, 1048605, 1, 0 )
+tile_data = PoolIntArray( -2, 1, 0, -1, 1, 0, -65536, 1, 0, -65535, 1, 0, -65534, 1, 0, -65533, 1, 0, -65532, 1, 0, -65531, 1, 0, -65530, 1, 0, -65529, 1, 0, -65528, 1, 0, -65527, 1, 0, -65526, 1, 0, -65525, 1, 0, -65524, 1, 0, -65523, 1, 0, -65522, 1, 0, -65521, 1, 0, -65520, 1, 0, -65519, 1, 0, -65518, 1, 0, -65517, 1, 0, -65516, 1, 0, -65515, 1, 0, -65514, 1, 0, -65513, 1, 0, -65512, 1, 0, -65511, 1, 0, -65510, 1, 0, -65509, 1, 0, -65508, 1, 0, -65507, 1, 0, 65534, 1, 0, 65535, 1, 0, 0, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 9, 1, 0, 10, 1, 0, 11, 1, 0, 12, 1, 0, 13, 1, 0, 14, 1, 0, 15, 1, 0, 16, 1, 0, 17, 1, 0, 18, 1, 0, 19, 1, 0, 20, 1, 0, 21, 1, 0, 22, 1, 0, 23, 1, 0, 24, 1, 0, 25, 1, 0, 26, 1, 0, 27, 1, 0, 28, 1, 0, 29, 1, 0, 131070, 1, 0, 131071, 1, 0, 65536, 1, 0, 65563, 1, 0, 65564, 1, 0, 65565, 1, 0, 196606, 1, 0, 196607, 1, 0, 131072, 1, 0, 131099, 1, 0, 131100, 1, 0, 131101, 1, 0, 262142, 1, 0, 262143, 1, 0, 196608, 1, 0, 196635, 1, 0, 196636, 1, 0, 196637, 1, 0, 327678, 1, 0, 327679, 1, 0, 262144, 1, 0, 262150, 1, 4, 262151, 1, 4, 262152, 1, 4, 262153, 1, 4, 262164, 1, 4, 262165, 1, 4, 262166, 1, 4, 262167, 1, 4, 262168, 1, 4, 262169, 1, 0, 262170, 1, 0, 262171, 1, 0, 262172, 1, 0, 262173, 1, 0, 393214, 1, 0, 393215, 1, 0, 327680, 1, 0, 327686, 1, 4, 327687, 1, 4, 327688, 1, 4, 327689, 1, 4, 327700, 1, 4, 327701, 1, 4, 327702, 1, 4, 327703, 1, 4, 327704, 1, 4, 327705, 1, 4, 327706, 1, 4, 327707, 1, 4, 327708, 1, 0, 327709, 1, 0, 458750, 1, 0, 458751, 1, 0, 393216, 1, 0, 393222, 1, 4, 393223, 1, 4, 393224, 1, 4, 393225, 1, 4, 393236, 1, 4, 393237, 1, 4, 393238, 1, 4, 393239, 1, 4, 393240, 1, 4, 393241, 1, 4, 393242, 1, 4, 393243, 1, 0, 393244, 1, 0, 393245, 1, 0, 524286, 1, 0, 524287, 1, 0, 458752, 1, 0, 458758, 1, 4, 458759, 1, 4, 458760, 1, 4, 458761, 1, 4, 458772, 1, 4, 458773, 1, 4, 458774, 1, 4, 458775, 1, 4, 458776, 1, 4, 458777, 1, 4, 458778, 1, 4, 458779, 1, 4, 458780, 1, 4, 458781, 1, 0, 589822, 1, 0, 589823, 1, 0, 524288, 1, 0, 524294, 1, 4, 524295, 1, 4, 524296, 1, 4, 524297, 1, 4, 524308, 1, 4, 524309, 1, 4, 524310, 1, 4, 524315, 1, 0, 524316, 1, 0, 524317, 1, 0, 655358, 1, 0, 655359, 1, 0, 589824, 1, 0, 589830, 1, 4, 589831, 1, 4, 589832, 1, 4, 589833, 1, 4, 589844, 1, 4, 589845, 1, 4, 589846, 1, 4, 589851, 1, 0, 589852, 1, 0, 589853, 1, 0, 720894, 1, 0, 720895, 1, 0, 655360, 1, 0, 655366, 1, 4, 655367, 1, 4, 655368, 1, 4, 655369, 1, 4, 655380, 1, 3, 655381, 1, 3, 655382, 1, 3, 655387, 1, 0, 655388, 1, 0, 655389, 1, 0, 786430, 1, 0, 786431, 1, 0, 720896, 1, 0, 720902, 1, 4, 720903, 1, 4, 720904, 1, 4, 720905, 1, 4, 720916, 1, 3, 720917, 1, 3, 720918, 1, 3, 720923, 1, 0, 720924, 1, 0, 720925, 1, 0, 851966, 1, 0, 851967, 1, 0, 786432, 1, 0, 786438, 1, 4, 786439, 1, 4, 786440, 1, 4, 786441, 1, 4, 786459, 1, 0, 786460, 1, 0, 786461, 1, 0, 917502, 1, 0, 917503, 1, 0, 851968, 1, 0, 851974, 1, 4, 851975, 1, 4, 851976, 1, 4, 851977, 1, 4, 851995, 1, 0, 851996, 1, 0, 851997, 1, 0, 983038, 1, 0, 983039, 1, 0, 917504, 1, 0, 917510, 1, 4, 917511, 1, 4, 917512, 1, 4, 917513, 1, 4, 917531, 1, 0, 917532, 1, 0, 917533, 1, 0, 1048574, 1, 0, 1048575, 1, 0, 983040, 1, 0, 983041, 1, 0, 983042, 1, 0, 983043, 1, 0, 983044, 1, 0, 983045, 1, 0, 983046, 1, 0, 983047, 1, 0, 983048, 1, 0, 983049, 1, 0, 983061, 1, 0, 983062, 1, 0, 983063, 1, 0, 983064, 1, 0, 983065, 1, 0, 983066, 1, 0, 983067, 1, 0, 983068, 1, 0, 983069, 1, 0, 1114110, 1, 0, 1114111, 1, 0, 1048576, 1, 0, 1048577, 1, 0, 1048578, 1, 0, 1048579, 1, 0, 1048580, 1, 0, 1048581, 1, 0, 1048582, 1, 0, 1048583, 1, 0, 1048584, 1, 0, 1048585, 1, 0, 1048597, 1, 0, 1048598, 1, 0, 1048599, 1, 0, 1048600, 1, 0, 1048601, 1, 0, 1048602, 1, 0, 1048603, 1, 0, 1048604, 1, 0, 1048605, 1, 0 )
 
 [node name="ClearFlag" parent="." instance=ExtResource( 2 )]
-position = Vector2( 936, 120 )
-
-[node name="RandomBlockArea" parent="." instance=ExtResource( 6 )]
-origin = Vector2( 500, 100 )
-matrix_x = Vector2( 250, -25 )
-matrix_y = Vector2( 0, 400 )
+position = Vector2( 928, 512 )
 
 [node name="RandomBlockRandomizer" type="Node2D" parent="."]
 script = ExtResource( 7 )
 
-[node name="RandomBlock" parent="RandomBlockRandomizer" instance=ExtResource( 3 )]
-position = Vector2( 520, 448 )
-size = Vector2( 5, 2 )
-
-[node name="RandomBlock2" parent="RandomBlockRandomizer" instance=ExtResource( 3 )]
-position = Vector2( 520, 384 )
-size = Vector2( 5, 2 )
-
-[node name="RandomBlock3" parent="RandomBlockRandomizer" instance=ExtResource( 3 )]
-position = Vector2( 528, 336 )
-size = Vector2( 5, 2 )
-
 [node name="DiceBlock" parent="RandomBlockRandomizer" instance=ExtResource( 5 )]
-position = Vector2( 648, 360 )
+position = Vector2( 904, 96 )
 collision_layer = 1
 collision_mask = 3
 
+[node name="RandomBlockArea" parent="RandomBlockRandomizer" instance=ExtResource( 6 )]
+origin = Vector2( 400, 150 )
+matrix_x = Vector2( 300, 50 )
+matrix_y = Vector2( -25, 350 )
+
+[node name="RandomBlock" parent="RandomBlockRandomizer" instance=ExtResource( 3 )]
+position = Vector2( 168, 480 )
+clearance_radius = 30
+
+[node name="RandomBlock2" parent="RandomBlockRandomizer" instance=ExtResource( 3 )]
+position = Vector2( 64, 384 )
+clearance_radius = 30
+
+[node name="RandomBlock3" parent="RandomBlockRandomizer" instance=ExtResource( 3 )]
+position = Vector2( 160, 240 )
+size = Vector2( 8, 4 )
+clearance_radius = 40
+
+[node name="RandomBlock4" parent="RandomBlockRandomizer" instance=ExtResource( 3 )]
+position = Vector2( 672, 192 )
+clearance_radius = 40
+
+[node name="RandomBlock5" parent="RandomBlockRandomizer" instance=ExtResource( 3 )]
+position = Vector2( 528, 288 )
+clearance_radius = 40
+
+[node name="RandomBlock6" parent="RandomBlockRandomizer" instance=ExtResource( 3 )]
+position = Vector2( 432, 184 )
+clearance_radius = 40
+
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 128, 448 )
+
+[node name="SpikeBed" type="Node2D" parent="."]
+position = Vector2( 376, 584 )
+
+[node name="Spike" parent="SpikeBed" instance=ExtResource( 9 )]
+
+[node name="Spike2" parent="SpikeBed" instance=ExtResource( 9 )]
+position = Vector2( 32, 0 )
+
+[node name="Spike3" parent="SpikeBed" instance=ExtResource( 9 )]
+position = Vector2( 64, 0 )
+
+[node name="Spike4" parent="SpikeBed" instance=ExtResource( 9 )]
+position = Vector2( 96, 0 )
+
+[node name="Spike5" parent="SpikeBed" instance=ExtResource( 9 )]
+position = Vector2( 128, 0 )
+
+[node name="Spike6" parent="SpikeBed" instance=ExtResource( 9 )]
+position = Vector2( 160, 0 )
+
+[node name="Spike7" parent="SpikeBed" instance=ExtResource( 9 )]
+position = Vector2( 192, 0 )
+
+[node name="Spike8" parent="SpikeBed" instance=ExtResource( 9 )]
+position = Vector2( 224, 0 )
+
+[node name="Spike9" parent="SpikeBed" instance=ExtResource( 9 )]
+position = Vector2( 256, 0 )
+
+[node name="Spike10" parent="SpikeBed" instance=ExtResource( 9 )]
+position = Vector2( 288, 0 )
+
+[node name="Spike11" parent="SpikeBed" instance=ExtResource( 9 )]
+position = Vector2( 288, 0 )
+
+[node name="Spike12" parent="SpikeBed" instance=ExtResource( 9 )]
+position = Vector2( 320, 0 )
+
+[node name="Spike13" parent="SpikeBed" instance=ExtResource( 9 )]
+position = Vector2( 352, 0 )
+
+[node name="DeathPit" parent="SpikeBed" instance=ExtResource( 8 )]
+position = Vector2( 184, 8 )
+scale = Vector2( 19.36, 1 )

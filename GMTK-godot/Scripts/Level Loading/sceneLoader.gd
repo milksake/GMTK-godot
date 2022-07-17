@@ -18,6 +18,10 @@ func _ready():
 func _process(delta):
 	camera.set_offset(Vector2(rand_range(-screen_shake, screen_shake), rand_range(-screen_shake, screen_shake)))
 
+	# Reset level by pressing 'R'
+	if Input.is_action_just_pressed("reset"):
+		load_level(current_level)
+
 func load_level(level_number):
 	if(get_child_count() > 1):
 		get_child(1).queue_free()
