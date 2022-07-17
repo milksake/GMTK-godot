@@ -27,7 +27,7 @@ func _ready():
 	# Gets the matrix_transformation funcref:
 	matrix_transformation = randomizer_area.get("matrix_transformation")
 	
-	# Subscribe to an event in dice_block:
+	# Subscribe randomize_blocks() to an event in dice_block:
 	dice_block.connect("dice_block_touched", self, "randomize_blocks")
 
 func randomize_blocks():
@@ -39,6 +39,8 @@ func randomize_blocks():
 		else:
 			randomize_block(placed_blocks, random_blocks[i])
 			placed_blocks.append(random_blocks[i])
+
+	randomize_dice_pos()
 
 func randomize_block(previous_blocks, new_block):
 	var new_pos = matrix_transformation.call_func(randf(), randf())
@@ -57,3 +59,7 @@ func randomize_block(previous_blocks, new_block):
 	# can't set it back to the 'wrong' position.
 	if right_to_set_pos:
 		new_block.global_position = new_pos
+
+func randomize_dice_pos():
+	var random_block = random_blocks[randi()%random_blocks.size()]
+	dice_block.global_position = random_block.global_position + Vector2.UP * random_block.get("clearance_radius")

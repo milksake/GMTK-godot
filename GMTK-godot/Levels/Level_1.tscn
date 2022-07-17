@@ -35,6 +35,9 @@ position = Vector2( 680, 440 )
 [node name="RandomBlock4" parent="RandomBlockRandomizer" instance=ExtResource( 3 )]
 position = Vector2( 616, 456 )
 
+[node name="RandomBlock5" parent="RandomBlockRandomizer" instance=ExtResource( 3 )]
+position = Vector2( 624, 408 )
+
 [node name="DiceBlock" parent="RandomBlockRandomizer" instance=ExtResource( 5 )]
 position = Vector2( 448, 416 )
 
