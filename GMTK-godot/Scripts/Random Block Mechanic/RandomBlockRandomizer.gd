@@ -2,8 +2,8 @@ tool
 extends Node2D
 
 var random_blocks = []
+var dice_blocks = []
 
-onready var dice_block = get_node("DiceBlock")
 onready var randomizer_area = get_node("RandomBlockArea")
 
 var matrix_transformation
@@ -24,11 +24,19 @@ func _ready():
 			# print("Added " + child_to_check.name)
 			random_blocks.append(child_to_check)
 	
+	for i in range(0, get_child_count()):
+		var child_to_check = get_child(i)
+		# print("Checking " + child_to_check.name)
+		var is_dice_block = child_to_check.get("is_dice_block")
+		if is_dice_block != null:
+			# print("Added " + child_to_check.name)
+			dice_blocks.append(child_to_check)
+	
 	# Gets the matrix_transformation funcref:
 	matrix_transformation = randomizer_area.get("matrix_transformation")
 	
 	# Subscribe randomize_blocks() to an event in dice_block:
-	dice_block.connect("dice_block_touched", self, "randomize_blocks")
+	# dice_block.connect("dice_block_touched", self, "randomize_blocks")
 
 func randomize_blocks():
 	var placed_blocks = []
@@ -61,5 +69,6 @@ func randomize_block(previous_blocks, new_block):
 		new_block.global_position = new_pos
 
 func randomize_dice_pos():
-	var random_block = random_blocks[randi()%random_blocks.size()]
-	dice_block.global_position = random_block.global_position + Vector2.UP * random_block.get("clearance_radius")
+	for i in range(dice_blocks.size()):
+		var random_block_1 = random_blocks[randi()%random_blocks.size()]
+		dice_blocks[i].global_position = random_block_1.global_position + Vector2.UP * random_block_1.get("clearance_radius")

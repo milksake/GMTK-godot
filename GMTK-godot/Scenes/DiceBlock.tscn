@@ -9,11 +9,11 @@ extents = Vector2( 32, 32 )
 [node name="DiceBlock" type="Area2D"]
 scale = Vector2( 0.75, 0.75 )
 collision_layer = 0
-collision_mask = 2
+collision_mask = 16
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-self_modulate = Color( 0, 0, 0, 1 )
+self_modulate = Color( 0.63, 0.13, 0.94, 1 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

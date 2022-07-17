@@ -50,6 +50,7 @@ clearance_radius = 40
 position = Vector2( 256, 424 )
 collision_layer = 1
 collision_mask = 3
+dice_color = Color( 0.54902, 0.0980392, 0.862745, 1 )
 
 [node name="RandomBlockArea" parent="RandomBlockRandomizer" instance=ExtResource( 6 )]
 origin = Vector2( 400, 300 )

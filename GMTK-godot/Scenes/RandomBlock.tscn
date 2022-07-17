@@ -16,7 +16,7 @@ script = ExtResource( 1 )
 clearance_radius = 50
 
 [node name="Sprite" type="Sprite" parent="."]
-self_modulate = Color( 0.752941, 0.247059, 0.839216, 1 )
+self_modulate = Color( 0.63, 0.13, 0.94, 1 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 

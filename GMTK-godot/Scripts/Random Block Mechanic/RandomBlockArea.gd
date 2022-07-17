@@ -22,11 +22,17 @@ func matrix_trans(i_hat, j_hat):
 func _process(_delta):
 	if (Engine.editor_hint):
 		var area = get_node("CollisionPolygon2D")
+		var label = get_node("Label")
 		
 		var points = [origin, 
 		origin + matrix_y,
 		origin + matrix_x + matrix_y,
 		origin + matrix_x]
 		var new_polygon = PoolVector2Array(points)
+		
+		label.rect_position = Vector2(0.5*(points[0].x + points[3].x), 
+		0.5*(points[0].y + points[3].y))
+		
+		label.text = get_parent().name
 		
 		area.polygon = new_polygon
