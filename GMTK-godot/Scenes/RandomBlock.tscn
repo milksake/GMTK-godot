@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/Random Block Mechanic/randomBlock.gd" type="Script" id=1]
 [ext_resource path="res://Textures/Tiles/random_block.png" type="Texture" id=2]
@@ -6,9 +6,14 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 8 )
 
+[sub_resource type="CircleShape2D" id=2]
+radius = 1.0
+
 [node name="RandomBlock" type="StaticBody2D"]
 position = Vector2( 648, 312 )
+collision_layer = 9
 script = ExtResource( 1 )
+clearance_radius = 50
 
 [node name="Sprite" type="Sprite" parent="."]
 self_modulate = Color( 0.752941, 0.247059, 0.839216, 1 )
@@ -18,3 +23,12 @@ texture = ExtResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2( 2, 2 )
 shape = SubResource( 1 )
+
+[node name="ClearanceVisualizer" type="Area2D" parent="."]
+scale = Vector2( 50, 50 )
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClearanceVisualizer"]
+shape = SubResource( 2 )
+disabled = true

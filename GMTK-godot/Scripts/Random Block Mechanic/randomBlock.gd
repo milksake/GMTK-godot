@@ -2,15 +2,15 @@ tool
 extends StaticBody2D
 
 export var size = Vector2(2, 2)
+export var clearance_radius = 3
 
 var dice_block
-
 var is_random_block = true
-var clearance_area_clear
+
 
 func _ready():
 	adjust_size()
-	clearance_area_clear = funcref(self, "is_anything_in_clearance_area")
+
 
 func _process(_delta):
 	if(Engine.editor_hint):
@@ -19,7 +19,4 @@ func _process(_delta):
 func adjust_size():
 	get_node("CollisionShape2D").scale = size
 	get_node("Sprite").scale = size
-
-func is_anything_in_clearance_area():
-	# To be changed later
-	return true
+	get_node("ClearanceVisualizer").scale = Vector2(1, 1) * clearance_radius
