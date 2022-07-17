@@ -1,10 +1,15 @@
+tool
 extends Node2D
 
 var random_blocks = []
+
 onready var dice_block = get_node("DiceBlock")
-onready var randomizer_area = get_parent().get_node("RandomBlockArea")
+onready var randomizer_area = get_node("RandomBlockArea")
 
 var matrix_transformation
+
+func _get_configuration_warning():
+	return "Needs RandomBlock scenes, ONLY ONE DiceBlock scene AND a RandomBlockArea scene as children! This is a reminder, not an error."
 
 func _ready():
 	
@@ -22,24 +27,39 @@ func _ready():
 	# Gets the matrix_transformation funcref:
 	matrix_transformation = randomizer_area.get("matrix_transformation")
 	
-	# Subscribe to an event in dice_block:
+	# Subscribe randomize_blocks() to an event in dice_block:
 	dice_block.connect("dice_block_touched", self, "randomize_blocks")
 
 func randomize_blocks():
-	randomize()
+	var placed_blocks = []
 	for i in range(random_blocks.size()):
-		randomize_block(random_blocks[i])
+		if i == 0:
+			random_blocks[i].global_position = matrix_transformation.call_func(randf(), randf())
+			placed_blocks.append(random_blocks[i])
+		else:
+			randomize_block(placed_blocks, random_blocks[i])
+			placed_blocks.append(random_blocks[i])
 
-# This is to be used with a RandomBlock
-func randomize_block(_block):
-	# Get the funcref for the is_anything_in_clearance_area function
-	var clearance_area_clear = _block.get("clearance_area_clear")
-	# Randomize the block position:
-	_block.global_position = matrix_transformation.call_func(randf(), randf())
+	randomize_dice_pos()
+
+func randomize_block(previous_blocks, new_block):
+	var new_pos = matrix_transformation.call_func(randf(), randf())
+	var right_to_set_pos = true
+	var own_clearance = new_block.get("clearance_radius")
 	
-	# Randomize the block position, until the block 
-	# has complete clearance.
-	if clearance_area_clear.call_func() == true:
-		return
-	else:
-		randomize_block(_block)
+	for n in range(previous_blocks.size()):
+		var distance_from_block = new_pos.distance_to(previous_blocks[n].global_position)
+		var clearance_radius_of_block = previous_blocks[n].get("clearance_radius") + own_clearance
+
+		if distance_from_block < clearance_radius_of_block:
+			right_to_set_pos = false
+			randomize_block(previous_blocks, new_block)
+	
+	# This is so that the previous calls of randomize_block
+	# can't set it back to the 'wrong' position.
+	if right_to_set_pos:
+		new_block.global_position = new_pos
+
+func randomize_dice_pos():
+	var random_block = random_blocks[randi()%random_blocks.size()]
+	dice_block.global_position = random_block.global_position + Vector2.UP * random_block.get("clearance_radius")
