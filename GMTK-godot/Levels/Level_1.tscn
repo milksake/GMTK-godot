@@ -57,3 +57,4 @@ matrix_y = Vector2( 0, 400 )
 position = Vector2( 128, 448 )
 
 [node name="LevelCurtain" parent="." instance=ExtResource( 8 )]
+visible = false

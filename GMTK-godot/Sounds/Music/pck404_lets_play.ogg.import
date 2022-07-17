@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/pck404_lets_play.ogg-648524d15e845040e8301fef0c1a913a.oggstr"
+
+[deps]
+
+source_file="res://Sounds/Music/pck404_lets_play.ogg"
+dest_files=[ "res://.import/pck404_lets_play.ogg-648524d15e845040e8301fef0c1a913a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

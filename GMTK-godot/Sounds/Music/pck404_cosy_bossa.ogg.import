@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/pck404_cosy_bossa.ogg-bba12e2274719a1a8a5eba4d4db1e0e2.oggstr"
+
+[deps]
+
+source_file="res://Sounds/Music/pck404_cosy_bossa.ogg"
+dest_files=[ "res://.import/pck404_cosy_bossa.ogg-bba12e2274719a1a8a5eba4d4db1e0e2.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

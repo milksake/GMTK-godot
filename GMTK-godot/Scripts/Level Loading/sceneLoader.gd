@@ -5,10 +5,11 @@ var load_level_function
 var load_next_level_function
 var screen_shake := 0
 onready var camera: Camera2D
-var path_to_dice_block: NodePath
-var dice_connect := false
 
 var shake_screen_funcref 
+
+export (AudioStream) var bgm
+onready var persistent_bgm: AudioStreamPlayer
 
 func _ready():
 	camera = Camera2D.new()
@@ -30,14 +31,18 @@ func _process(_delta):
 
 func load_level(level_number):
 	if(get_child_count() > 1):
-		get_child(1).queue_free()
+		get_child(get_child_count()-1).queue_free()
+	else:
+		persistent_bgm = AudioStreamPlayer.new()
+		add_child(persistent_bgm)
+		persistent_bgm.stream = bgm
+		persistent_bgm.bus = "Music"
+		persistent_bgm.playing = true
 		
 	var level_name = "Level_" + str(level_number) + ".tscn"
 	var level_n: Node = load("res://Levels/" + level_name).instance()
 	call_deferred("add_child", level_n)
-	if level_n.has_node(NodePath("RandomBlockRandomizer/DiceBlock")):
-		path_to_dice_block = NodePath("Level_" + str(level_number) + "/RandomBlockRandomizer/DiceBlock")
-		dice_connect = true
+
 
 func load_next_level():
 	var path_to_next_level_file = "res://Levels/Level_" + str(current_level+1) + ".tscn" 

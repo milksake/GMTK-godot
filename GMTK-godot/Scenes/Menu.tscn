@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/Menu.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/BebasNeue-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Sounds/Music/pck404_lets_play.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Sounds/rollover2.ogg" type="AudioStream" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -75,5 +77,15 @@ size_flags_vertical = 6
 custom_fonts/font = SubResource( 2 )
 text = "Quit"
 
+[node name="MenuMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
+bus = "Music"
+
+[node name="UIAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/btnPlay" to="." method="_on_btnPlay_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/btnPlay" to="." method="_on_btnPlay_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/btnQuit" to="." method="_on_btnQuit_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/btnQuit" to="." method="_on_btnQuit_pressed"]
