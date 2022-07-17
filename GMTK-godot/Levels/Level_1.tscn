@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Textures/marble.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/ClearFlag.tscn" type="PackedScene" id=2]
@@ -9,6 +9,11 @@
 [ext_resource path="res://Scenes/RandomBlockRandomizer.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/LevelStartCurtain.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Background.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Fonts/BebasNeue-Regular.ttf" type="DynamicFontData" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 10 )
 
 [node name="Level_1" type="Node2D"]
 
@@ -62,3 +67,12 @@ position = Vector2( 128, 448 )
 
 [node name="LevelCurtain" parent="." instance=ExtResource( 8 )]
 visible = false
+
+[node name="Tutorial" type="Label" parent="."]
+margin_left = 192.0
+margin_top = 400.0
+margin_right = 314.0
+margin_bottom = 481.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "R: Reset"

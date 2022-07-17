@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="GMTK.godot"
-run/main_scene="res://Scenes/Menu.tscn"
+run/main_scene="res://Levels/Menu.tscn"
 config/icon="res://icon.png"
 
 [display]
@@ -21,6 +21,7 @@ window/size/resizable=false
 [global]
 
 Display=false
+Splash=false
 
 [input]
 
