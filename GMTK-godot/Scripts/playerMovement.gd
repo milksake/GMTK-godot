@@ -37,9 +37,9 @@ func _physics_process(delta):
 func get_player_direction():
 	var player_direction = Vector2.ZERO
 	if Input.is_action_pressed("move_left"):
-		player_direction.x = -1
+		player_direction.x -= 1
 	if Input.is_action_pressed("move_right"):
-		player_direction.x = 1
+		player_direction.x += 1
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		player_direction.y = -1
 	return player_direction
